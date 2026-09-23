@@ -11,6 +11,18 @@ export const metadata: Metadata = {
   title: site.seo.title,
   description: site.seo.description,
   ...(site.seo.url ? { alternates: { canonical: '/' } } : {}),
+  openGraph: {
+    title: site.seo.title,
+    description: site.seo.description,
+    locale: 'pt_BR',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: site.seo.title,
+    description: site.seo.description,
+    images: ['/opengraph-image.jpg'],
+  },
 };
 export default function RootLayout({children}: Readonly<{children:React.ReactNode}>) {
   return <html lang="pt-BR"><body style={{
